@@ -18,5 +18,5 @@ def get_db():
 
 @router.get("/all", response_model=List[schemas.HeroModel])
 def get_heroes(db: Session = Depends(get_db)):
-    heroes = crud.read_heroes(db)
+    heroes = crud.get_heroes(db)
     return heroes
